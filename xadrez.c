@@ -1,14 +1,13 @@
 #include <stdio.h>
 
 
-void recurso(int jogada,char dr[30]){
+void mover_bispo(int jogada){
+    if (jogada > 0){
+        printf("Cima direita\n");
+        mover_bispo(jogada - 1);
 
-    if (jogada > 0)
-    {
-       recurso (jogada - 1); 
-       printf("%s\n",dr);
        
-    }
+    }    
     
 
 
@@ -27,9 +26,8 @@ int main() {
     printf("***Desafio Xadrez***\n\n");
     printf("__Movimento do Bispo__\n");
     int bispo = 5;
-    char dir = 'Cima direira';
 
-    recurso(bispo,dir);
+    mover_bispo(bispo);
 
     // Implementação de Movimentação da Torre
     // Estrutura de repetição para simular a movimentação da Torre para a direita.
